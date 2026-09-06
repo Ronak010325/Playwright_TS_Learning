@@ -1,6 +1,6 @@
 import {test, expect, Locator} from "@playwright/test";
 
-test("Static Table Test",async({page}) => {
+test.only("Static Table Test",async({page}) => {
     await page.goto("https://testautomationpractice.blogspot.com/");
 
     const tableBody: Locator = page.locator("table[name='BookTable'] tbody");
@@ -23,16 +23,36 @@ test("Static Table Test",async({page}) => {
     // }
 
     // Read All Data
-    let input: string[][] = [];
+    // let input: string[][] = [];
+    // for(let i = 1 ; i < await tableRow.count() ; i++) {
+    //     const Coloumn: Locator = tableRow.nth(i).locator("td");
+    //     let rowArr: string[] = [];
+    //     for(let j = 0 ; j < await Coloumn.count() ; j++) {
+    //         rowArr.push(await Coloumn.nth(j).innerText());
+    //     }
+    //     input.push(rowArr);
+    // }
+    // console.log(input);
+
+    // Condition Based Retrival
+    // for(let i = 1 ; i < await tableRow.count() ; i++) {
+    //     const tdArray: string[] = await (tableRow.nth(i).locator("td")).allTextContents();
+    //     if(tdArray[1] == "Amit") {
+    //         console.log("Author Name : ", tdArray[1]);
+    //         console.log("Book Name : ", tdArray[0]);
+    //     }
+    // }
+
+    // Total Price of Books
+    let total: number = 0;
     for(let i = 1 ; i < await tableRow.count() ; i++) {
-        const Coloumn: Locator = tableRow.nth(i).locator("td");
-        let rowArr: string[] = [];
-        for(let j = 0 ; j < await Coloumn.count() ; j++) {
-            rowArr.push(await Coloumn.nth(j).innerText());
-        }
-        input.push(rowArr);
+        const tdArray: string[] = await (tableRow.nth(i).locator("td")).allTextContents();
+        let price: number = parseInt(tdArray[3]); //Number(tdArray[3])
+        total += price;
     }
-    console.log(input);
+
+    console.log("Total Amount : ", total);
+    expect(total).toBe(7100);
 });
 
 test("Dynamic Table Test", async({page}) => {
@@ -46,12 +66,13 @@ test("Dynamic Table Test", async({page}) => {
     let outputArr: string[][] = [];
     for(let i = 0 ; i < await tRow.count() ; i++) {
         const tColoumns: Locator = tRow.nth(i).locator("td");
-        let coloumn: string[] = [];
-        for(let j = 0 ; j < await tColoumns.count() ; j++) {
-            // console.log(tColoumns.nth(j).innerText());
-            coloumn.push(await tColoumns.nth(j).innerText());
-        }
-        outputArr.push(coloumn);
+        console.log(await tColoumns.allTextContents());
+        // let coloumn: string[] = [];
+        // for(let j = 0 ; j < await tColoumns.count() ; j++) {
+        //     // console.log(tColoumns.nth(j).innerText());
+        //     coloumn.push(await tColoumns.nth(j).innerText());
+        // }
+        // outputArr.push(coloumn);
     }
-    console.log(outputArr);
+    // console.log(outputArr);
 });
