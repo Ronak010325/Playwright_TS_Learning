@@ -1,0 +1,22 @@
+[
+  {
+    "username": "demo5231@gmail.com",
+    "password": "demo5231",
+    "result": "valid"
+  },
+  {
+    "username": "laxmi@gmail.com",
+    "password": "laxmi",
+    "result": "invalid"
+  },
+  {
+    "username": "barvo@gmail.com",
+    "password": "bravo",
+    "result": "invalid"
+  },
+  {
+    "username": "abc123@gmail.com",
+    "password": "test@123",
+    "result": "valid"
+  }
+]

@@ -12,26 +12,30 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  
+  // grep: /@sanity/,            //Include Tag
+  // grepInvert: /@regression/,  //Exclude Tag
   testDir: './tests',
   // Action Timeout
   timeout: 20000, //Global Timeout. in ms
   // Assertion Timeout
   expect: {timeout: 10000}, //in ms
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: true, //False for serial execution and true for parallel execution
+  // Local Worker Configuration
+  workers: 1,
+  /* Opt out of parallel tests on CI. */
+  // workers: process.env.CI ? 1 : undefined,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
   /* Retry on CI only */
-  retries: 3,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  retries: 0,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    // headless:false, //Used to perform tests in headless mode
     screenshot:'only-on-failure', //Takes screenshot only on failure
     video:'retain-on-failure', //Keeps record only of failure and not of positive test 
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -52,8 +56,8 @@ export default defineConfig({
       //     args:["--start-maximized"],
       //   }
       // },
-    }
-    // ,
+      // fullyParallel:true,
+    },
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
