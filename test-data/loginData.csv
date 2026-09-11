@@ -1,0 +1,5 @@
+username,password,result
+demo5231@gmail.com,demo5231,valid
+laxmi@gmail.com,laxmi,invalid
+barvo@gmail.com,bravo,invalid
+abc123@gmail.com,test@123,valid
