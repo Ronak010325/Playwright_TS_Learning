@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"This Group of Test will Check Basic Home page Functionality","5250","Page Title","chromium","2026-09-22","passed","2026-09-22","Tricent Ecommerce Website Home Page Tests","Day7Reporting.spec.ts","",""
+"This Group of Test will Check Basic Home page Functionality","5634","Logo Test","chromium","2026-09-22","passed","2026-09-22","Tricent Ecommerce Website Home Page Tests","Day7Reporting.spec.ts","",""
+"This Group of Test will Check Basic Home page Functionality","5707","Search Box","chromium","2026-09-22","passed","2026-09-22","Tricent Ecommerce Website Home Page Tests","Day7Reporting.spec.ts","",""

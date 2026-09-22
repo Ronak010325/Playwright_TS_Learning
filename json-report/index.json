@@ -1,0 +1,213 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\K.K\\OneDrive\\Desktop\\typescript_fundamentals\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "Day7Reporting.spec.ts"
+    ],
+    "configFile": "C:\\Users\\K.K\\OneDrive\\Desktop\\typescript_fundamentals\\playwright.config.ts",
+    "rootDir": "C:/Users/K.K/OneDrive/Desktop/typescript_fundamentals/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/K.K/OneDrive/Desktop/typescript_fundamentals/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/K.K/OneDrive/Desktop/typescript_fundamentals/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 20000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "html-report"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "junit-report/index.xml"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "json-report/index.json"
+        }
+      ],
+      [
+        "C:\\Users\\K.K\\OneDrive\\Desktop\\typescript_fundamentals\\custom-report.ts",
+        {
+          "customOption": "some value"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 5,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "Day7Reporting.spec.ts",
+      "file": "Day7Reporting.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Logo Test",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16563,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-22T12:47:32.368Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5587969c3c8255a05d24-fcfd0c00cbe225119a2c",
+          "file": "Day7Reporting.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Page Title",
+          "ok": true,
+          "tags": [
+            "sanity"
+          ],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 16371,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-22T12:47:32.322Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5587969c3c8255a05d24-390284523e7cf5a3579b",
+          "file": "Day7Reporting.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "Search Box",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 18614,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-22T12:47:32.477Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5587969c3c8255a05d24-d15e478e3ba09319c536",
+          "file": "Day7Reporting.spec.ts",
+          "line": 15,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-22T12:47:29.781Z",
+    "duration": 22496.927,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -12,6 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  globalSetup: './global-setup',
   // grep: /@sanity/,            //Include Tag
   // grepInvert: /@regression/,  //Exclude Tag
   testDir: './tests',
@@ -22,7 +24,7 @@ export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: true, //False for serial execution and true for parallel execution
   // Local Worker Configuration
-  workers: 1,
+  workers: 5,
   /* Opt out of parallel tests on CI. */
   // workers: process.env.CI ? 1 : undefined,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -32,10 +34,23 @@ export default defineConfig({
   /* Retry on CI only */
   retries: 0,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  // reporter: 'html',
+  // Different Types of Default Playwright report configuration
+  reporter: [
+            //  ["html", {open: 'never',outputFolder:'html-report'}],
+             ["html", {open: 'never'}],
+            //  ["list"],
+            //  ["dot"],
+            //  ["line"],
+            //  ["junit", {outputFile: 'junit-report/index.xml'}],
+            //  ["json", {outputFile: 'json-report/index.json'}],
+             ['allure-playwright'],
+            // ["./custom-report.ts", {customOption:'some value'}],
+
+            ], //By Default the open is set to on-failure
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    // headless:false, //Used to perform tests in headless mode
+    headless:true, //Used to perform tests in headless mode
     screenshot:'only-on-failure', //Takes screenshot only on failure
     video:'retain-on-failure', //Keeps record only of failure and not of positive test 
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -58,15 +73,15 @@ export default defineConfig({
       // },
       // fullyParallel:true,
     },
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
 
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
 
     /* Test against mobile viewports. */
     // {
