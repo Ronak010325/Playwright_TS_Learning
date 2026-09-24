@@ -13,6 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  //To remove allure-results folder (It will execute first before all the tests).
   globalSetup: './global-setup',
   // grep: /@sanity/,            //Include Tag
   // grepInvert: /@regression/,  //Exclude Tag
@@ -32,7 +33,7 @@ export default defineConfig({
   /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
   /* Retry on CI only */
-  retries: 0,
+  retries: 2,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
   // Different Types of Default Playwright report configuration
@@ -50,7 +51,7 @@ export default defineConfig({
             ], //By Default the open is set to on-failure
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless:true, //Used to perform tests in headless mode
+    headless:false, //Used to perform tests in headless mode
     screenshot:'only-on-failure', //Takes screenshot only on failure
     video:'retain-on-failure', //Keeps record only of failure and not of positive test 
     /* Base URL to use in actions like `await page.goto('')`. */
