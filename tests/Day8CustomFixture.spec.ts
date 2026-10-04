@@ -1,5 +1,5 @@
 // import { test,expect } from '@playwright/test';
-import { test,expect } from './CustomeFixtures/login.spec.js';
+import { test,expect } from './CustomeFixtures/login.js';
 
 // This is the Basic Test that we perform.
 // test.skip("Custom Fixture Test", async({page}) => {
